@@ -1,0 +1,22 @@
+<div class="person-card" (click)="onSelect()">
+  <div class="person-info">
+    <h3 class="person-name">{{ person.firstName }} {{ person.lastName }}</h3>
+    <div class="person-details">
+      <span class="detail-item">
+        <strong>Born:</strong> {{ person.dateOfBirth | date:'mediumDate' }}
+      </span>
+      <span class="detail-item">
+        <strong>Department:</strong> {{ person.department }}
+      </span>
+    </div>
+  </div>
+  
+  <div class="person-actions" (click)="$event.stopPropagation()">
+    <button class="btn btn-outline-primary btn-sm" (click)="onEdit()">
+      Edit
+    </button>
+    <button class="btn btn-outline-danger btn-sm" (click)="onDelete()">
+      Delete
+    </button>
+  </div>
+</div>

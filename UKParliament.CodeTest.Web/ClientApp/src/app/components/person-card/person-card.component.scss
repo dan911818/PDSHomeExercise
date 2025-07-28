@@ -1,0 +1,93 @@
+$parliament-green: #006853;
+$parliament-dark-green: #004d3a;
+$text-dark: #0b0c0c;
+$text-secondary: #505a5f;
+$border-color: #d4d4d4;
+$white: #ffffff;
+$error-red: #d4351c;
+
+.person-card {
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: $white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $parliament-green;
+    box-shadow: 0 4px 12px rgba(0, 104, 83, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .person-info {
+    margin-bottom: 1rem;
+  }
+
+  .person-name {
+    margin: 0 0 0.75rem 0;
+    color: $parliament-green;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .person-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .detail-item {
+    color: $text-secondary;
+    font-size: 0.9rem;
+
+    strong {
+      color: $text-dark;
+    }
+  }
+
+  .person-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+}
+
+// Buttons
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &.btn-outline-primary {
+    background-color: transparent;
+    color: $parliament-green;
+    border: 2px solid $parliament-green;
+
+    &:hover {
+      background-color: $parliament-green;
+      color: $white;
+    }
+  }
+
+  &.btn-outline-danger {
+    background-color: transparent;
+    color: $error-red;
+    border: 2px solid $error-red;
+
+    &:hover {
+      background-color: $error-red;
+      color: $white;
+    }
+  }
+
+  &.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

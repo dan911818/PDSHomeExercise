@@ -1,0 +1,120 @@
+$parliament-green: #006853;
+$parliament-dark-green: #004d3a;
+$parliament-light-green: #e8f3f0;
+$text-dark: #0b0c0c;
+$text-secondary: #505a5f;
+$border-color: #d4d4d4;
+$white: #ffffff;
+
+// Form Styles
+.form-container {
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.form-card {
+  padding: 2rem;
+}
+
+.form-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $parliament-light-green;
+
+  h2 {
+    margin: 0;
+    color: $parliament-green;
+    font-size: 1.5rem;
+  }
+}
+
+.person-form {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: $text-dark;
+  }
+
+  .form-control {
+    padding: 0.75rem;
+    border: 2px solid $border-color;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $parliament-green;
+      box-shadow: 0 0 0 3px rgba(0, 104, 83, 0.1);
+    }
+
+    &::placeholder {
+      color: lighten($text-secondary, 20%);
+    }
+  }
+
+  .form-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}
+
+// Buttons
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &.btn-primary {
+    background-color: $parliament-green;
+    color: $white;
+
+    &:hover:not(:disabled) {
+      background-color: $parliament-dark-green;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $text-secondary;
+    color: $white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($text-secondary, 10%);
+    }
+  }
+}

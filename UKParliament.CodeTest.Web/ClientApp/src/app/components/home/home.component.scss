@@ -1,0 +1,137 @@
+// UK Parliament Color Palette
+$parliament-green: #006861;
+$parliament-gold: #B8860B;
+$parliament-dark-green: #004d3a;
+$parliament-light-green: #e8f3f0;
+$text-dark: #0b0c0c;
+$text-secondary: #505a5f;
+$border-color: #d4d4d4;
+$background-light: #f8f8f8;
+$white: #ffffff;
+$error-red: #d4351c;
+$warning-yellow: #ffbf47;
+
+.page-container {
+  min-height: 100vh;
+  background-color: $background-light;
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  background-color: $white;
+  color: $white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    height: 60px;
+    width: auto;
+  }
+
+  .page-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+  }
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// Action Bar
+.action-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid $parliament-light-green;
+}
+
+// Buttons
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &.btn-primary {
+    background-color: $parliament-green;
+    color: $white;
+
+    &:hover:not(:disabled) {
+      background-color: $parliament-dark-green;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $text-secondary;
+    color: $white;
+
+    &:hover:not(:disabled) {
+      background-color: darken($text-secondary, 10%);
+    }
+  }
+}
+
+.icon-plus::before {
+  content: "+";
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .header {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+    .page-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

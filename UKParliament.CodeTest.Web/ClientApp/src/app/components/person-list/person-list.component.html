@@ -1,0 +1,23 @@
+<div class="people-section">
+  <div class="section-header">
+    <h2>People Directory</h2>
+    <p class="section-description">Manage and view all registered people in the system.</p>
+  </div>
+
+  <div class="people-grid" *ngIf="people.length > 0; else noPeople">
+    <app-person-card 
+      *ngFor="let person of people" 
+      [person]="person"
+      (edit)="onEdit(person)"
+      (delete)="onDelete(person)"
+      (select)="onSelect(person)">
+    </app-person-card>
+  </div>
+
+  <ng-template #noPeople>
+    <div class="empty-state">
+      <h3>No People Found</h3>
+      <p>Get started by adding your first person to the system.</p>
+    </div>
+  </ng-template>
+</div>

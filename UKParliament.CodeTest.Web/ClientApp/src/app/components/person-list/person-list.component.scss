@@ -1,0 +1,54 @@
+// People Section
+.people-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 2rem 2rem 1rem;
+  background: linear-gradient(135deg, #e8f3f0, #f0f6f4);
+
+  h2 {
+    margin: 0 0 0.5rem 0;
+    color: #006853;
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    margin: 0;
+    color: #505a5f;
+  }
+}
+
+.people-grid {
+  padding: 1rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+}
+
+// Empty State
+.empty-state {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #505a5f;
+
+  h3 {
+    margin: 0 0 1rem 0;
+    color: #0b0c0c;
+  }
+
+  p {
+    margin: 0 0 2rem 0;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

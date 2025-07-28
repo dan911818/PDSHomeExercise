@@ -1,0 +1,49 @@
+<div class="page-container">
+  <header class="header">
+    <div class="header-content">
+      <img src="/assets/logo.svg" alt="UK Parliament logo" class="logo" />
+      <div class="header-text">
+        <h1 class="page-title">
+          <strong>Person Management System</strong>
+          <br />
+          <span class="subtitle">For the UK Parliamentary Digital Service</span>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="content-wrapper">
+      
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <button class="btn btn-primary" (click)="onAddPerson()">
+          <i class="icon-plus"></i>
+          Add New Person
+        </button>
+        
+      </div>
+
+      <!-- Add/Edit Form -->
+      <app-person-form
+        [person]="editingPerson"
+        [departments]="departments"
+        [isVisible]="showForm"
+        (save)="onSavePerson($event)"
+        (cancel)="onCancelForm()">
+      </app-person-form>
+
+      <!-- People List -->
+      <app-person-list
+        [people]="people"
+        (editPerson)="onEditPerson($event)"
+        (deletePerson)="onDeletePerson($event)"
+        (selectPerson)="onSelectPerson($event)">
+      </app-person-list>
+    </div>
+  </main>
+</div>
+
+
+
+
